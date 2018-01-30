@@ -12,11 +12,13 @@ app.set("view engine", "hbs");
 
 app.use(express.static(path.join(__dirname,"public")));
 
+/*
 app.use((req, resp, next) => {
 	resp.render("down", {
 		now: new Date().toString()
 	});
 });
+*/
 
 app.get('/', (req, resp) => {
 	resp.render("home", {
