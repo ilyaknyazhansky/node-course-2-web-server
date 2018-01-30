@@ -14,16 +14,21 @@ app.use(express.static(path.join(__dirname,"public")));
 
 app.get('/', (req, resp) => {
 	resp.render("home", {
+		pageTitle: "Home",
 		welcomeMessage: "Welcome HOME!"
 	});
 });
 
 app.get('/about', (req, resp) => {
-	resp.render("about.hbs");
+	resp.render("about.hbs", {
+		pageTitle: "About"
+	});
 });
 
 app.get('/projects', (req, resp) => {
-	resp.render("projects.hbs");
+	resp.render("projects.hbs", {
+		pageTitle: "Projects"
+	});
 });
 
 
