@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const hbs = require("hbs");
 
+const port = process.env.PORT || 3000;
+
 hbs.registerPartials(path.join(__dirname,"views","partials"));
 
 var app = express();
@@ -28,4 +30,4 @@ app.get('/about', (req, resp) => {
 	resp.render("about.hbs");
 });
 
-app.listen(3000, () => console.log("Starting on port 3000"));
+app.listen(port, () => console.log("Starting on port", port));
